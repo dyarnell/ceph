@@ -690,6 +690,75 @@ Special Error Responses
 :Description: Attempt to grant invalid admin capability.
 :Code: 400 Bad Request
 
+Modify Quota
+=========
+
+Modify a user or bucket quota.
+
+:caps: users=write
+
+Syntax
+~~~~~~
+
+::
+    PUT /{admin}/user?uid=<uid>[&quota-type=<type>]
+    Host: {fqdn
+
+Request Paramters
+~~~~~~~~~~~~~~~~~
+
+``uid``
+
+:Description: The user ID to modify.
+:Type: String
+:Example: ``foo_user``
+:Required: Yes
+
+``quota-type``
+
+:Description: Type of quota to set one of ``user, bucket``
+:Type: String
+:Example: ``bucket``
+:Required: no
+
+``max_size_kb``
+:Description: Maximum size for the quota in kilobytes.
+              Unlimited is designated by 1.
+:Type: Integer
+:Example: ``40000``
+:Required: no
+
+``max_objects``
+:Description: Maximum number of objects allowed.
+              Unlimited is designated by -1.
+:Type: Integer
+:Example: ``5000``
+:Required: no
+
+``enabled``
+:Description: If quota is on, one of ``true, false``
+:Type: String
+:Example: ``true``
+:Required: no
+
+Response Entities
+~~~~~~~~~~~~~~~~~
+
+If successful, the response contains the ???? information.
+
+Special Error Responses
+~~~~~~~~~~~~~~~~~~~~~~~
+
+``InvalidAccessKey``
+
+:Description: Invalid access key specified.
+:Code: 400 Bad Request
+
+``InvalidSecretKey``
+
+:Description: Invalid secret key specified.
+:Code: 400 Bad Request
+
 Remove User
 ===========
 
