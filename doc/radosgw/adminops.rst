@@ -723,18 +723,21 @@ Request Paramters
 :Required: no
 
 ``max_size_kb``
+
 :Description: Maximum size for the quota in kilobytes.  Unlimited is designated by -1.
 :Type: Integer
 :Example: ``40000``
 :Required: no
 
 ``max_objects``
+
 :Description: Maximum number of objects allowed.  Unlimited is designated by -1.
 :Type: Integer
 :Example: ``5000``
 :Required: no
 
 ``enabled``
+
 :Description: If quota is on, one of ``true, false``
 :Type: String
 :Example: ``true``
